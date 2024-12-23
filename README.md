@@ -57,7 +57,7 @@ If you face "NaN", please disable mixed precision and use only TF32. We will als
 For smaller models, we retain the Attn-MLP as described in the paper, while for larger models, we adopt the Attn-CrossAttn-MLP architecture. Both architectures achieve similar performance under the same parameters.
 
 ## Inference
-The pretrained weights are avaiable at [huggingface🤗](https://huggingface.co/OliverRen/FlowAR)
+The pretrained weights are available at [huggingface🤗](https://huggingface.co/OliverRen/FlowAR)
 
 Evaluate FlowAR-S with classifier-free guidance:
 ```python
