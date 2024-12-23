@@ -2,7 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv%20paper-2412.15205-b31b1b.svg)](https://arxiv.org/abs/2412.15205)&nbsp;
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/flowar-scale-wise-autoregressive-image/image-generation-on-imagenet-256x256)](https://paperswithcode.com/sota/image-generation-on-imagenet-256x256?flowar-scale-wise-autoregressive-image)
-[![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-mar-yellow)](https://huggingface.co/OliverRen/FlowAR)&nbsp;
+[![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-FlowAR-yellow)](https://huggingface.co/OliverRen/FlowAR)&nbsp;
 
 This repository is the official implementation of our [FlowAR: Scale-wise Autoregressive Image Generation Meets Flow Matching](https://arxiv.org/abs/2412.15205)
 
@@ -54,6 +54,8 @@ main_flowar.py \
 ```
 If you face "NaN", please disable mixed precision and use only TF32. We will also release a more stable version soon :)
 
+For smaller models, we retain the Attn-MLP as described in the paper, while for larger models, we adopt the Attn-CrossAttn-MLP architecture. Both architectures achieve similar performance under the same parameters.
+
 ## Inference
 The pretrained weights are avaiable at [huggingface🤗](https://huggingface.co/OliverRen/FlowAR)
 
@@ -101,3 +103,7 @@ If you have any question, feel free to contact [Sucheng Ren](oliverrensu@gmail.c
   year={2024}
 }
 ```
+
+## Acknowledgement
+[VAR](https://github.com/FoundationVision/VAR)
+[MAR](https://github.com/LTH14/mar)
