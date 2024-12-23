@@ -23,17 +23,17 @@ Keep overall batch size of 2048.
 
 Train FlowAR-S
 ```python
-torchrun --nproc_per_node=8 --nnodes=$WORKER_NUM --node_rank=$WORKER_ID --master_addr=$WORKER_0_HOST --master_port=$WORKER_0_PORT \
+torchrun --nproc_per_node=8 --nnodes=4 --node_rank=$WORKER_ID --master_addr=$WORKER_0_HOST --master_port=$WORKER_0_PORT \
 main_flowar.py \
 --img_size 256 --vae_path /path/to/MAR/vae/kl16.ckpt --vae_embed_dim 16 --vae_stride 16 --patch_size 1 \
 --model flowar_small --diffloss_d 2 --diffloss_w 1024 \
 --epochs 400 --warmup_epochs 100 --batch_size 64 --blr 5e-5 \
---output_dir ./output_dir/ --resume ./output_dir/ --use_checkpoint \
+--output_dir ./output_dir/ --resume ./output_dir/ \
 --data_path /path/to/imagenet/ --cached_path /path/to/imagenet_feature/
 ```
 Train FlowAR-L
 ```python
-torchrun --nproc_per_node=8 --nnodes=$WORKER_NUM --node_rank=$WORKER_ID --master_addr=$WORKER_0_HOST --master_port=$WORKER_0_PORT \
+torchrun --nproc_per_node=8 --nnodes=4 --node_rank=$WORKER_ID --master_addr=$WORKER_0_HOST --master_port=$WORKER_0_PORT \
 main_flowar.py \
 --img_size 256 --vae_path /path/to/MAR/vae/kl16.ckpt --vae_embed_dim 16 --vae_stride 16 --patch_size 1 \
 --model flowar_large --diffloss_d 12 --diffloss_w 1024 \
@@ -44,11 +44,11 @@ main_flowar.py \
 
 Train FlowAR-H
 ```python
-torchrun --nproc_per_node=8 --nnodes=$WORKER_NUM --node_rank=$WORKER_ID --master_addr=$WORKER_0_HOST --master_port=$WORKER_0_PORT \
+torchrun --nproc_per_node=8 --nnodes=8 --node_rank=$WORKER_ID --master_addr=$WORKER_0_HOST --master_port=$WORKER_0_PORT \
 main_flowar.py \
 --img_size 256 --vae_path /path/to/MAR/vae/kl16.ckpt --vae_embed_dim 16 --vae_stride 16 --patch_size 1 \
 --model flowar_huge --diffloss_d 12 --diffloss_w 1536 \
---epochs 400 --warmup_epochs 100 --batch_size 64 --blr 5e-5 \
+--epochs 400 --warmup_epochs 100 --batch_size 32 --blr 5e-5 \
 --output_dir ./output_dir/ --resume ./output_dir/ --use_checkpoint \
 --data_path /path/to/imagenet/ --cached_path /path/to/imagenet_feature/
 ```
