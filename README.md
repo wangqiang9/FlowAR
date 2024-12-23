@@ -14,7 +14,7 @@ Autoregressive (AR) modeling has achieved remarkable success in natural language
 Compared to the closely related VAR, FlowAR provides superior image quality at similar model scales. For example, FlowAR-L, with 589M parameters, achieves an FID of 1.90—surpassing both VAR-d20 (FID 2.95) of comparable size and even largest VAR-d30 (FID 1.97), which has 2B parameters. Furthermore, our largest model, FlowAR-H (1.9B parameters, FID 1.65), sets a new state-of-the-art benchmark for scale-wise autoregressive image generation.
 ## Preparation
 
-We adopt the tokenizer from [MAR](https://github.com/LTH14/mar) and put it to /path/to/MAR/vae
+We adopt the tokenizer from [MAR](https://github.com/LTH14/mar) and put it in /path/to/MAR/vae
 
 Download ImageNet dataset.
 
