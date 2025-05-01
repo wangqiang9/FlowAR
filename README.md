@@ -4,7 +4,11 @@
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/flowar-scale-wise-autoregressive-image/image-generation-on-imagenet-256x256)](https://paperswithcode.com/sota/image-generation-on-imagenet-256x256?flowar-scale-wise-autoregressive-image)
 [![huggingface](https://img.shields.io/badge/%F0%9F%A4%97%20HuggingFace-FlowAR-yellow)](https://huggingface.co/OliverRen/FlowAR)&nbsp;
 
-This repository is the official implementation of our [FlowAR: Scale-wise Autoregressive Image Generation Meets Flow Matching](https://arxiv.org/abs/2412.15205)
+This repository is the official implementation of [FlowAR: Scale-wise Autoregressive Image Generation Meets Flow Matching](https://arxiv.org/abs/2412.15205) 
+
+### 🎉FlowAR is accepted by ICML2025!
+
+
 
 ## Introduction
 Autoregressive (AR) modeling has achieved remarkable success in natural language processing by enabling models to generate text with coherence and contextual understanding through next token prediction. Recently, in image generation, VAR proposes scale-wise autoregressive modeling, which extends the next token prediction to the next scale prediction, preserving the 2D structure of images. However, VAR encounters two primary challenges: (1) its complex and rigid scale design limits generalization in next scale prediction, and (2) the generator's dependence on a discrete tokenizer with the same complex scale structure restricts modularity and flexibility in updating the tokenizer. To address these limitations, we introduce FlowAR, a general next scale prediction method featuring a streamlined scale design, where each subsequent scale is simply double the previous one. This eliminates the need for VAR's intricate multi-scale residual tokenizer and enables the use of any off-the-shelf Variational AutoEncoder (VAE). Our simplified design enhances generalization in next scale prediction and facilitates the integration of Flow Matching for high-quality image synthesis. We validate the effectiveness of FlowAR on the challenging ImageNet-256 benchmark, demonstrating superior generation performance compared to previous methods.
@@ -96,11 +100,11 @@ eval.py \
 If you have any question, feel free to contact [Sucheng Ren](oliverrensu@gmail.com)
 
 ```
-@article{ren2024flowar,
+@inproceedings{ren2025flowar,
   title={FlowAR: Scale-wise Autoregressive Image Generation Meets Flow Matching},
   author={Ren, Sucheng and Yu, Qihang and He, Ju and Shen, Xiaohui and Yuille, Alan and Chen, Liang-Chieh},
-  journal={arXiv preprint arXiv:2412.15205},
-  year={2024}
+  booktitle = {ICML},
+  year = {2025}
 }
 ```
 
